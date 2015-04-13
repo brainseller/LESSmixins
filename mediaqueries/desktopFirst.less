@@ -1,0 +1,51 @@
+/* ----------------------------------------- *\
+ * ============= LESS mixins =============== *
+ * = Frank Fuchs BrainSellers Media Design = *
+ * ======== http://frankfuchs.net/ ========= *
+\* ----------------------------------------- */
+
+@breakpoint1: 640px;
+@breakpoint2: 480px;
+
+.breakpoint1(@rules){
+  @media screen and (max-width: @breakpoint1) { @rules(); }
+}
+.breakpoint2(@rules){
+  @media screen and (max-width: @breakpoint2) { @rules(); }
+}
+
+/* ------------------------------------- *\
+            retina
+\* ------------------------------------- */
+
+.retina(@rules){
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi){ @rules(); }
+}
+
+/*
+.test {
+  font-size: 1rem;
+  .breakpoint1({
+    font-size: 0.875rem;
+  });
+  .breakpoint2({
+    font-size: 0.75rem;
+  });
+}
+
+CONVERTS TO
+
+.test {
+  font-size: 1rem;
+}
+@media screen and (max-width: 640px) {
+  .test {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .test {
+    font-size: 0.75rem;
+  }
+}
+*/
